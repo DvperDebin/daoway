@@ -1,0 +1,185 @@
+#server_outer_wrapper {
+  width: 100%;
+}
+#server_outer_wrapper .header {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+#server_outer_wrapper .header.on {
+  animation: showHeader 2s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 999;
+}
+@-moz-keyframes showHeader {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes showHeader {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-o-keyframes showHeader {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes showHeader {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+#server_outer_wrapper .header .header_inner {
+  width: 100%;
+  height: 100%;
+  padding: 2.5px 0;
+  box-sizing: border-box;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container >a {
+  display: block;
+  float: left;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container >a >img {
+  margin-top: 8px;
+  display: block;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right {
+  width: 70%;
+  height: 100%;
+  float: right;
+  display: flex;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .city {
+  height: 70px;
+  line-height: 60px;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .city >img {
+  vertical-align: middle;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .city >span {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .nav {
+  display: flex;
+  height: 100%;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .nav >div {
+  height: 100%;
+  width: 97px;
+  display: flex;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .nav >div >a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  text-align: right;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .nav >div >a.homepage {
+  color: #e94840;
+}
+#server_outer_wrapper .header .header_inner .header_inner_container .header_right .nav >div >a.seller >span {
+  padding: 5px 5px;
+  border-radius: 7px;
+  background-color: #e94840;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+#server_outer_wrapper .server_main {
+  width: 100%;
+  background-color: #fbf8f8;
+}
+#server_outer_wrapper .server_main .main_inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+#server_outer_wrapper .server_main .main_inner >h2 {
+  line-height: 85px;
+  font-size: 18px;
+  font-weight: 600;
+}
+#server_outer_wrapper .server_main .main_inner .main_info {
+  width: 100%;
+  display: flex;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_img {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_img .main_img_item {
+  width: 232px;
+  height: 300px;
+  border: 1px solid #eaeaea;
+  padding: 10px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  box-sizing: border-box;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_img .main_img_item >a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_img .main_img_item >a >img {
+  display: block;
+  width: 210px;
+  height: 210px;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_adv {
+  width: 20%;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_adv >a {
+  display: block;
+  width: 100%;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_adv >a >img {
+  display: block;
+  width: 230px;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_adv .qr {
+  width: 230px;
+  height: 290px;
+  background-image: url("../images/swap.jpg");
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+#server_outer_wrapper .server_main .main_inner .main_info .main_adv .qr >img {
+  width: 130px;
+  margin: 50px 0px 0px 50px;
+}
