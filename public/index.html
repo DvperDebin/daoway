@@ -307,7 +307,7 @@
               养车用车
               <img src="images/right.png">
             </a>
-            <ul class="nav_seclv" style="display: block">
+            <ul class="nav_seclv">
               <li><a href="javascripts:;">上门养车</a></li>
               <li><a href="javascripts:;">上门洗车</a></li>
               <li><a href="javascripts:;">汽车陪练</a></li>
@@ -436,7 +436,7 @@
     </div>
 
     <!-- 第二服务项 -->
-    <div class="service" style="background-color: #FBF8F8">
+    <div class="service">
       <div class="service_inner">
         <div class="service_main">
           <!-- 服务描述 -->
@@ -666,7 +666,7 @@
       </div>
     </div>
 
-    <div class="service" style="background-color: #FBF8F8">
+    <div class="service">
       <div class="service_inner">
         <div class="service_main">
           <!-- 服务描述 -->
@@ -896,7 +896,7 @@
       </div>
     </div>
 
-    <div class="service" style="background-color: #FBF8F8">
+    <div class="service">
       <div class="service_inner">
         <div class="service_main">
           <!-- 服务描述 -->
@@ -1126,7 +1126,7 @@
       </div>
     </div>
 
-    <div class="service" style="background-color: #FBF8F8">
+    <div class="service">
       <div class="service_inner">
         <div class="service_main">
           <!-- 服务描述 -->
@@ -1356,7 +1356,7 @@
       </div>
     </div>
 
-    <div class="service" style="background-color: #FBF8F8">
+    <div class="service">
       <div class="service_inner">
         <div class="service_main">
           <!-- 服务描述 -->
@@ -1472,9 +1472,9 @@
     </div>
 
     <div class="guarantee">
-      <h2>到位<span>服务</span>保障</h2>
-      <p>到位平台担保交易安全，交易未成功100%退款</p>
-    </div>
+    <h2>到位<span>服务</span>保障</h2>
+    <p>到位平台担保交易安全，交易未成功100%退款</p>
+  </div>
 
     <div class="extra_service">
       <div>
@@ -1545,7 +1545,7 @@
     <div class="coop">
       <div class="coop_inner">
         <div class="title">
-            合作伙伴
+          合作伙伴
         </div>
         <div class="coop_info">
           <div>
@@ -1670,7 +1670,7 @@
   });
 
   $(function () {
-    // 给document绑定事件
+    // 给document绑定事件, 头部固定效果
     $(document).scroll(function () {
       if($(document).scrollTop() >= 70){
         $('.header').addClass('on')
@@ -1678,8 +1678,30 @@
         $('.header').removeClass('on')
       }
     })
+    // 二级菜单效果
+    var lis = $('.main_nav>ul>li')
+    var secUls = $('.main_nav>ul>li>ul')
+    var index = 0;
+    lis.on('mouseenter',function () {
+      index = $(this).index()
+      secUls[index].style.display = 'block'
+      lis[index].style.backgroundColor = '#60646D'
+      // 小图切换
+      $srcs = $(this).find('img').attr('src')
+      console.log($srcs);
 
+    }).on('mouseleave',function () {
+      secUls[index].style.display = 'none'
+      lis[index].style.backgroundColor = ''
+    })
 
+    // 服务项的背景切换
+    var service = $('.service')
+    for(var i = 0; i < service.length; i++){
+      if(i%2 === 1){
+        service[i].style.backgroundColor = '#FBF8F8'
+      }
+    }
   })
 
 </script>

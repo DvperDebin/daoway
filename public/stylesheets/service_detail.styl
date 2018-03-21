@@ -1,0 +1,446 @@
+html,body
+  background-color #f8f8f8
+  .details_wrapper
+    width 100%
+    .header
+      width 100%
+      height 70px
+      border-bottom 1px solid #ddd
+      box-sizing border-box
+      background-color #fff
+      &.on
+        animation showHeader 2s ease
+        position fixed
+        top 0
+        left 0
+        right 0
+        background-color #ffffff
+        z-index 999
+        @keyframes showHeader{
+          from {
+            transform translateY(-100%)
+          }
+          to{
+            transform translateY(0)
+          }
+        }
+      .header_inner
+        width 100%
+        height 100%
+        padding 2.5px 0
+        box-sizing border-box
+        .header_inner_container
+          width 1200px
+          margin 0 auto
+          height 100%
+          padding 0 15px
+          box-sizing border-box
+          overflow hidden
+          >a
+            display block
+            float left
+            >img
+              margin-top 8px
+              display block
+          .header_right
+            width 70%
+            height 100%
+            float right
+            display flex
+            .city
+              height 70px
+              line-height 60px
+              >img
+                vertical-align middle
+              >span
+                font-size 16px
+                color black
+                font-weight bold
+            .nav
+              display flex
+              height 100%
+              >div
+                height 100%
+                width 97px
+                display flex
+                >a
+                  display block
+                  width 100%
+                  height 100%
+                  line-height 60px
+                  text-align right
+                  font-size 16px
+                  color black
+                  font-weight bold
+                  &.homepage
+                    color #e94840;
+                  &.seller
+                    >span
+                      padding 5px 5px
+                      border-radius 7px
+                      background-color #e94840
+                      color #fff
+                      font-weight bold
+                      font-size 16px
+    .nav_wrapper
+      width 100%
+      margin-top 10px
+      background-color #fff
+      .nav_inner
+        width 1200px
+        height 140px
+        margin 0 auto
+        .nav_left
+          float left
+          height 120px
+          margin 20px 0 0 10px
+          line-height 140px
+          >span:nth-child(1)
+            font-size 36px
+            font-weight 700
+          >span:nth-child(2)
+            margin-left 10px
+            font-size 14px
+            color #929292
+          >span:nth-child(3)
+            margin-left 10px
+            font-size 14px
+            color #929292
+            >span
+              color #e84b47
+        .nav_right
+          float right
+          height 120px
+          margin-top 20px
+          >ul
+            height 100%
+            >li
+              float left
+              width 100px
+              text-align center
+              line-height 22px
+              margin-top 52px
+              position relative
+              >span
+                position absolute
+                bottom 12px
+                right 0
+                color #e5e5e5
+              >p:nth-child(1)
+                font-size 14px
+                color #e84b47
+              >p:nth-child(2)
+                font-size 14px
+    .nav_service
+      width 100%
+      height 40px
+      line-height 40px
+      background-color #323434
+      .nav_service_inner
+        width 1200px
+        height 100%
+        margin 0 auto
+        display flex
+        >div
+          width 140px
+          height 100%
+          >a
+            height 100%
+            width 100%
+            text-align center
+            display block
+            color #fff
+            font-size 14px
+            &.on
+              background-color #424242
+    .detail_main
+      width 100%
+      margin-top 22px
+      margin-bottom 50px
+      .detail_main_inner
+        width 1200px
+        margin 0 auto
+        display flex
+        .main_info
+          width 960px
+          margin-right 10px
+          >h3
+            width 100%
+            height 60px
+            line-height 60px
+            font-weight normal
+            font-size 14px
+            background: #fff
+            overflow hidden
+            border-bottom 1px solid #e5e5e5
+            padding-left 3%
+            box-sizing border-box
+            >span
+              color black
+              display inline-block
+              height 60px
+              border-bottom 4px solid #fb474f
+              box-sizing border-box
+          .main_desc
+            width 100%
+            height 200px
+            background-color #fff
+            position relative
+            >a
+              display block
+              width 100%
+              height 100%
+              >img
+                margin 25px
+                border 1px solid #e5e5e5
+                vertical-align middle
+                width 150px
+                float left
+              >span
+                width 64%
+                display block
+                float left
+                margin-top 25px
+                >span
+                  display block
+                  width 99%
+                  &.first
+                    height 42px
+                    line-height 42px
+                    font-size 18px
+                    color #1d1515
+                  &.second
+                    overflow hidden
+                    white-space nowrap
+                    text-overflow ellipsis
+                    color #929292
+                    font-size 14px
+                    height 42px
+                    line-height 42px
+                  &.third
+                    margin-top 20px
+                    height 42px
+                    line-height 42px
+                    >span:nth-child(1)
+                      color #fc545e
+                      font-size 30px
+                      font-weight bold
+                    >span:nth-child(2)
+                      color #fc545e
+                      font-size 14px
+                    >span:nth-child(3)
+                      margin-left 20px
+                      font-size 14px
+
+              .sell
+                position absolute
+                right 60px
+                bottom 25px
+                display inline
+                margin-top 0
+                font-style normal
+                font-size 14px
+          .summary_title
+            margin-top 70px
+            border-bottom 0px
+          .company_outer
+            width 960px
+            background-color #fff
+            .company
+              border-top: 1px solid #e5e5e5;
+              height 40px
+              line-height 40px
+              font-size 18px
+              margin 0 25px
+              padding 10px 0
+              >img
+                margin-left 10px
+                vertical-align middle
+          .content_outer
+            width 960px
+            background-color #fff
+            .content
+              width 100%
+              line-height 28px
+              font-size 16px
+              padding 10px 25px 25px
+              box-sizing border-box
+
+
+          .comment
+            margin-top 10px
+            border-bottom 0
+            >em
+              font-style normal
+              margin-left 15px
+          .comment_content_outer
+            width 960px
+            background-color #fff
+            .comment_content
+              width: 96%;
+              margin: 0 3%;
+              padding-top: 20px;
+              border-top: 1px solid #e5e5e5;
+              .main_item
+                width 100%
+                box-sizing border-box
+                border-bottom: 1px solid #e5e5e5;
+                >img
+                  border-radius 6px
+                  vertical-align top
+                  width 40px
+                .comment_text
+                  margin-left 20px
+                  width 92%
+                  display inline-block
+                  >div:nth-child(1)
+                    line-height 28px
+                  >div:nth-child(2)
+                    line-height 28px
+                    .star
+                      width 70px
+                      >img
+                        vertical-align middle
+                        width 10px
+                    .time
+                      margin-left 10px
+                      font-size 14px
+
+
+                  >div:nth-child(3)
+                    line-height 26px
+                    font-size 16px
+                  >div:nth-child(4)
+                    margin-top 30px
+                    line-height 28px
+                    >img
+                      vertical-align middle
+                      margin-right 10px
+                    >span
+                      font-size 14px
+                      color #898989
+          .pages
+            width 960px
+            height 152px
+            text-align center
+            background-color #fff
+            .previous
+              display inline-block
+              color #929292;
+              width: 80px;
+              height: 30px;
+              line-height: 30px;
+              border-radius: 0;
+              font-size: 14px;
+              margin: 50px 5px;
+              background: #fff;
+              border: 1px solid #e5e5e5;
+            .pages_num
+              display inline-block
+              >a
+                display inline-block
+                width: 32px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+                border: 1px solid #e5e5e5;
+                margin: 50px 5px;
+                color: #121212;
+                &.on
+                  background: #fe454a;
+                  color: #fff;
+            .next
+              width: 80px;
+              height: 30px;
+              line-height: 30px;
+              font-size: 14px;
+              color: #121212;
+              border: 1px solid #e5e5e5;
+              margin: 50px 5px;
+              background: #fff;
+              display: inline-block;
+        .main_adv
+          width 230px
+          .qr
+            width 230px
+            height 290px
+            background-image url("../images/swap.jpg")
+            background-repeat no-repeat
+            margin-top 10px
+            &.seller
+              background-image url("../images/fuwushang2_07.jpg")
+              margin-top 0
+            >img
+              width 130px
+              margin 50px 0px 0px 50px
+    .guarantee
+      text-align center
+      width 100%
+      padding-top 60px
+      background #fff
+      >h2
+        font-size 30px
+        font-family "微软雅黑"
+        font-weight 800
+        margin 20px 0 13px 0
+        >span
+          color #fb474f
+          font-weight 800
+      >p
+        font-size 22px
+        color #3d3838
+    .extra_service
+      width 100%
+      padding-top 20px
+      background #fff
+      height 66px
+      font-family "微软雅黑"
+      display flex
+      justify-content center
+      >div
+        height 22px
+        width 140px
+        text-align: center;
+        color: #1d1515;
+        font-size: 18px;
+        >img
+          width 20px
+          vertical-align middle
+          marigin-right 10px
+    .pop_city
+      width 100%
+      padding-top 50px
+      margin-bottom 20px
+      .pop_inner
+        width 1200px
+        margin 0 auto
+        display flex
+        .title
+          width 10%
+          height 100px
+          font-size 18px
+          font-weight 700
+          font-family " 微软雅黑"
+        .city_info
+          width 90%
+          display flex
+          flex-wrap wrap
+          >div
+            width 100%
+            display flex
+            >a
+              display block
+              flex 1
+
+    .legalInfo
+      width 100%
+      background-color #FBF8F8
+      height 40
+      .leagal_inner
+        width 1200px
+        height 100%
+        line-height 40px
+        margin 0 auto
+        color #898989
+        font-size 14px
+
