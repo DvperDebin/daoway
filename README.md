@@ -25,3 +25,14 @@
 
       artTemplate each使用 {{each 传入的数据}}  {{each $value.传入数据的某个属性}} {{$value}} {{$index}} {{/each}}  {{/each}}
       总之就是{{$value}} 和 {{$index}}
+
+
+      找到了一个时间戳转换时间的代码：
+            function timestampToTime(timestamp) {
+                  var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+                  Y = date.getFullYear() + '-';
+                  M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                  D = date.getDate() + ' ';
+                  return Y+M+D
+            }
+      可以复用 相当好用！ 注意看好时间戳位数！！！

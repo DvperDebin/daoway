@@ -280,7 +280,7 @@
 </script>
 
 <script id="detail_desc" type="text/html">
-  <a href="javascripts:;">
+  <a href="http://localhost:3000/seller_detail.html">
     <img src="{{data[0].imgUrl}}">
 
     <span>
@@ -312,29 +312,29 @@
 </script>
 
 <script id="comment" type="text/html">
+  {{each data}}
   <div class="main_item">
-    <img src="images/user.jpg">
+    <img src="{{$value.iconUrl}}">
     <div class="comment_text">
-      <div>u***</div>
+      <div>{{$value.nick}}</div>
       <div>
         <span class="star">
-          <img src="images/red_star.png">
-          <img src="images/red_star.png">
-          <img src="images/red_star.png">
-          <img src="images/red_star.png">
-          <img src="images/red_star.png">
+          {{each $value.starColl}}
+          <img src="images/{{$value}}">
+          {{/each}}
         </span>
-        <span class="time">2018-03-20</span>
+        <span class="time">{{$value.realTime}}</span>
       </div>
       <div>
-        OK
+        {{$value.comment}}
       </div>
       <div>
         <img src="images/position.jpg">
-        <span>深圳 罗湖区</span>
+        <span>{{$value.city}} {{$value.area}}</span>
       </div>
     </div>
   </div>
+  {{/each}}
 </script>
 
 <script type="text/javascript">
@@ -373,6 +373,13 @@
       $(pages).removeClass('on')
       $(this).addClass('on')
       index = $(this).index()
+      page = index + 1
+      // 利用html重写评论区内容而不是添加到已存在的评论区后
+      $.get('/getComment?page='+page,function (data) {
+        stars(data)
+        timeSwitch(data)
+        $('.comment_content').html(template('comment',{data:data}))
+      })
     })
 
     pre.on('click',function () {
@@ -380,6 +387,12 @@
       if(index <= 0){
         index = 0
       }
+      page = index + 1
+      $.get('/getComment?page='+page,function (data) {
+        stars(data)
+        timeSwitch(data)
+        $('.comment_content').html(template('comment',{data:data}))
+      })
       $(pages[index]).addClass('on')
       $(pages[index+1]).removeClass('on')
     })
@@ -389,15 +402,59 @@
       if(index >= 9){
         index = 9
       }
+      page = index + 1
+      $.get('/getComment?page='+page,function (data) {
+        stars(data)
+        timeSwitch(data)
+        $('.comment_content').html(template('comment',{data:data}))
+      })
       $(pages[index]).addClass('on')
       $(pages[index-1]).removeClass('on')
     })
 
-
+    var page = 1;
     // 发送ajax请求
-    $.get('/getComment',function (data) {
+    $.get('/getComment?page='+page,function (data) {
+      stars(data)
+      timeSwitch(data)
       $('.comment_content').append(template('comment',{data:data}))
     })
+
+
+    // 设置星星个数和颜色的函数
+    function stars(data) {
+      for(var i = 0; i < data.length; i++){
+        var starArr = []
+        var statCount = data[i].star
+        for(var j = 0; j < statCount; j++){
+          starArr.push('red_star.png')
+        }
+        while(starArr.length < 5){
+          starArr.push('gray_star.png')
+        }
+        // 给原数据的每一项添加一个新的属性 starColl
+        data[i].starColl = starArr
+      }
+    }
+
+    // 转换时间戳为真实时间,
+    function timestampToTime(timestamp) {
+      var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+      Y = date.getFullYear() + '-';
+      M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+      D = date.getDate() + ' ';
+      return Y+M+D
+    }
+
+    function timeSwitch(data) {
+      for(var i = 0; i < data.length; i++){
+        var time = data[i].createtime
+        var localTime = timestampToTime(time)
+        data[i].realTime = localTime
+      }
+    }
+
+
   })
 
 </script>
