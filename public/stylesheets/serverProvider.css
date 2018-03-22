@@ -217,6 +217,7 @@
   width: 85%;
   height: 152px;
   text-align: center;
+  cursor: pointer;
 }
 #server_outer_wrapper .server_main .main_inner .more_list >span {
   display: inline-block;

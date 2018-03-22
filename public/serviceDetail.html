@@ -22,7 +22,7 @@
             </div>
             <div class="nav">
               <div>
-                <a href="javascrips:;" class="homepage">
+                <a href="http://localhost:3000/index.html" class="homepage">
                   首页
                 </a>
               </div>
@@ -32,7 +32,7 @@
                 </a>
               </div>
               <div>
-                <a href="javascrips:;">
+                <a href="http://localhost:3000/serverProvider.html">
                   服务商
                 </a>
               </div>
@@ -64,30 +64,7 @@
 
     <div class="nav_wrapper">
       <div class="nav_inner">
-        <div class="nav_left">
-          <span>云家政</span>
-          <span>营业时间：09:00-18:00 </span>
-          <span>最近可预约时间：<span>03月21日 09:00</span></span>
-        </div>
-
-        <div class="nav_right">
-          <ul>
-            <li>
-              <p>45594</p>
-              <p>成功接单</p>
-              <span>|</span>
-            </li>
-            <li>
-              <p>93%</p>
-              <p>接单率</p>
-              <span>|</span>
-            </li>
-            <li>
-              <p>86%</p>
-              <p>好评率</p>
-            </li>
-          </ul>
-        </div>
+      <!-- 头部标题模板插入 -->
 
       </div>
     </div>
@@ -111,25 +88,7 @@
           </h3>
 
           <div class="main_desc">
-            <a href="javascripts:;">
-              <img src="images/ser.jpg">
-
-              <span>
-                <span class="first">家庭保洁</span>
-                <span class="second">
-                  家庭保洁服务，2小时起订，服务时间未使用完不做退款处理。阿...
-                </span>
-                <span class="third">
-                  <span>35</span><span>元/小时</span>
-                  <span>原价<del>45</del></span>
-                </span>
-              </span>
-
-              <em class="sell">
-                已售59994
-              </em>
-
-            </a>
+          <!-- 简介模板插入区域 -->
           </div>
 
           <h3 class="summary_title">
@@ -138,14 +97,12 @@
 
           <div class="company_outer">
             <div class="company">
-              <span>上海家谐网络科技有限公司</span> <img src="images/renzheng.jpg">
+            <!-- 公司名模板插入 -->
             </div>
           </div>
 
           <div class="content_outer">
-            <p class="content">
-              云家政是家政服务在线预订平台。我们的目标是让每个家庭都能获得诚信、便捷、有保障的家政服务。云家政拥有国内最大的实名认证家庭服务员数据库，目前平台上有超过100000名专业服务人员；数百个家政服务商，遍布全国主要城市各个社区。 云家政倡导简单、轻松的生活方式。通过把分散的家政服务能力汇集和分配，让中国家庭获得诚信、便捷、有保障的家政服务，解决日常生活中的麻烦事，把更多时间留给自己和家人，提高生活品质。
-            </p>
+           <!-- 公司内容模板插入 -->
           </div>
 
           <h3 class="comment">
@@ -154,75 +111,9 @@
 
           <div class="comment_content_outer">
             <div class="comment_content">
-              <div class="main_item">
-                <img src="images/user.jpg">
-                <div class="comment_text">
-                  <div>u***</div>
-                  <div>
-                    <span class="star">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                    </span>
-                    <span class="time">2018-03-20</span>
-                  </div>
-                  <div>
-                    OK
-                  </div>
-                  <div>
-                    <img src="images/position.jpg">
-                    <span>深圳 罗湖区</span>
-                  </div>
-                </div>
-              </div>
-              <div class="main_item">
-                <img src="images/user.jpg">
-                <div class="comment_text">
-                  <div>u***</div>
-                  <div>
-                    <span class="star">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                    </span>
-                    <span class="time">2018-03-20</span>
-                  </div>
-                  <div>
-                    OK
-                  </div>
-                  <div>
-                    <img src="images/position.jpg">
-                    <span>深圳 罗湖区</span>
-                  </div>
-                </div>
-              </div>
-              <div class="main_item">
-                <img src="images/user.jpg">
-                <div class="comment_text">
-                  <div>u***</div>
-                  <div>
-                    <span class="star">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                      <img src="images/red_star.png">
-                    </span>
-                    <span class="time">2018-03-20</span>
-                  </div>
-                  <div>
-                    OK
-                  </div>
-                  <div>
-                    <img src="images/position.jpg">
-                    <span>深圳 罗湖区</span>
-                  </div>
-                </div>
-              </div>
+
+              <!-- 评论模板插入区域 -->
+
             </div>
           </div>
 
@@ -358,4 +249,157 @@
 
 
 </body>
+<script type="text/javascript" src="javascripts/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="template-web.js"></script>
+
+<script id="detail_title" type="text/html">
+  <div class="nav_left">
+    <span>{{data[0].title}}</span>
+    <span>营业时间：09:00-18:00 </span>
+    <span>最近可预约时间：<span>03月21日 09:00</span></span>
+  </div>
+
+  <div class="nav_right">
+    <ul>
+      <li>
+        <p>{{data[0].orderCount}}</p>
+        <p>成功接单</p>
+        <span>|</span>
+      </li>
+      <li>
+        <p>{{data[0].accept}}</p>
+        <p>接单率</p>
+        <span>|</span>
+      </li>
+      <li>
+        <p>{{data[0].praise}}</p>
+        <p>好评率</p>
+      </li>
+    </ul>
+  </div>
+</script>
+
+<script id="detail_desc" type="text/html">
+  <a href="javascripts:;">
+    <img src="{{data[0].imgUrl}}">
+
+    <span>
+      <span class="first">{{data[0].name}}</span>
+      <span class="second">
+        {{data[0].desc}}
+      </span>
+      <span class="third">
+        <span>{{data[0].price}}</span><span>元/小时</span>
+        <span>原价<del>{{data[0].oldPrice}}</del></span>
+      </span>
+    </span>
+
+    <em class="sell">
+      已售{{data[0].soldCount}}
+    </em>
+
+  </a>
+</script>
+
+<script id="company_name" type="text/html">
+  <span>{{data[0].company}}</span> <img src="images/renzheng.jpg">
+</script>
+
+<script id="company_content" type="text/html">
+  <p class="content">
+  {{data[0].profile}}
+  </p>
+</script>
+
+<script id="comment" type="text/html">
+  <div class="main_item">
+    <img src="images/user.jpg">
+    <div class="comment_text">
+      <div>u***</div>
+      <div>
+        <span class="star">
+          <img src="images/red_star.png">
+          <img src="images/red_star.png">
+          <img src="images/red_star.png">
+          <img src="images/red_star.png">
+          <img src="images/red_star.png">
+        </span>
+        <span class="time">2018-03-20</span>
+      </div>
+      <div>
+        OK
+      </div>
+      <div>
+        <img src="images/position.jpg">
+        <span>深圳 罗湖区</span>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="text/javascript">
+
+  $(function () {
+    $(document).scroll(function () {
+      if($(document).scrollTop() >= 70){
+        $('.header').addClass('on')
+      }else{
+        $('.header').removeClass('on')
+      }
+    })
+
+    var headerA = $('.nav>div>a')
+    headerA.on('mouseenter',function () {
+      $(this).css('color','#e94840')
+    }).on('mouseleave',function () {
+      $(this).css('color','#000')
+    })
+
+    // 发送ajax 请求或得数据,除评论外数据
+    $.get('/getItem?id=1001',function (data) {
+      $('.nav_inner').append(template('detail_title',{data:data}))
+      $('.main_desc').append(template('detail_desc',{data:data}))
+      $('.company').append(template('company_name',{data:data}))
+      $('.content_outer').append(template('company_content',{data:data}))
+    })
+
+    // 写点击切换的效果
+    var pre = $('.previous')
+    var next = $('.next')
+    var pages = $('.pages_num>a')
+    var index = 0;
+
+    pages.on('click',function () {
+      $(pages).removeClass('on')
+      $(this).addClass('on')
+      index = $(this).index()
+    })
+
+    pre.on('click',function () {
+      index = index -1
+      if(index <= 0){
+        index = 0
+      }
+      $(pages[index]).addClass('on')
+      $(pages[index+1]).removeClass('on')
+    })
+
+    next.on('click',function () {
+      index = index + 1
+      if(index >= 9){
+        index = 9
+      }
+      $(pages[index]).addClass('on')
+      $(pages[index-1]).removeClass('on')
+    })
+
+
+    // 发送ajax请求
+    $.get('/getComment',function (data) {
+      $('.comment_content').append(template('comment',{data:data}))
+    })
+  })
+
+</script>
+
 </html>
